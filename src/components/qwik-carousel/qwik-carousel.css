@@ -1,0 +1,116 @@
+.qwikui-carousel {
+  --slide-size: 100%;
+  --slide-height: 5rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  flex: 1;
+  background: hsla(0, 0%, 19%, 0.1);
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  transition: 300ms opacity ease;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: revert;
+}
+
+img {
+  width: 100%;
+}
+
+.qwikui-view {
+  overflow: clip;
+  flex: 3;
+  flex-grow: 3;
+  border: 5px solid #c4b5fd;
+  border-radius: 0.0001rem;
+}
+
+.qwikui-container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+  margin-left: calc(var(--slide-spacing) * -1);
+  transition-property: transform;
+  transition-timing-function: ease;
+}
+
+.qwikui-slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  position: relative;
+  user-select: none;
+  transition-property: transform;
+}
+
+img {
+  object-position: 50% 20%;
+}
+
+.active-bullet.active-bullet {
+  background: var(--primary-color);
+  opacity: 1;
+}
+
+.bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--light-gray);
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.carousel-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px 24px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.01) 8.1%,
+    hsla(0, 0%, 0%, 0.037) 15.5%,
+    hsla(0, 0%, 0%, 0.08) 22.5%,
+    hsla(0, 0%, 0%, 0.135) 29%,
+    hsla(0, 0%, 0%, 0.2) 35.3%,
+    hsla(0, 0%, 0%, 0.271) 41.2%,
+    hsla(0, 0%, 0%, 0.347) 47.1%,
+    hsla(0, 0%, 0%, 0.423) 52.9%,
+    hsla(0, 0%, 0%, 0.499) 58.8%,
+    hsla(0, 0%, 0%, 0.57) 64.7%,
+    hsla(0, 0%, 0%, 0.635) 71%,
+    hsla(0, 0%, 0%, 0.69) 77.5%,
+    hsla(0, 0%, 0%, 0.733) 84.5%,
+    hsla(0, 0%, 0%, 0.76) 91.9%,
+    hsla(0, 0%, 0%, 0.77) 100%
+  );
+  z-index: 10 !important;
+  border-radius: 1rem;
+  border-bottom-left-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+  pointer-events: none;
+}
+
+.carousel-slide {
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .qwikui-carousel {
+    flex-direction: row;
+  }
+}

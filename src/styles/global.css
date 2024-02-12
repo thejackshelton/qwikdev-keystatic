@@ -1,0 +1,239 @@
+/* links */
+
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+/* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+/* @link https://utopia.fyi/grid/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  /* type scale */
+  --step--2: clamp(0.7038rem, 0.8082rem + -0.1348vw, 0.7813rem);
+  --step--1: clamp(0.9375rem, 0.9375rem + 0vw, 0.9375rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.24rem + 0.55vw, 1.6663rem);
+  --step-2: clamp(1.62rem, 1.4109rem + 1.0457vw, 2.2213rem);
+  --step-3: clamp(1.9438rem, 1.5901rem + 1.7685vw, 2.9606rem);
+  --step-4: clamp(2.3325rem, 1.771rem + 2.8076vw, 3.9469rem);
+  --step-5: clamp(2.7994rem, 1.9433rem + 4.2804vw, 5.2606rem);
+
+  /* space scale */
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+  --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
+  --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vw, 0.625rem);
+  --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
+  --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
+  --space-s-m: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
+  --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vw, 2.5rem);
+  --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vw, 3.75rem);
+  --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vw, 5rem);
+  --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+
+  /* fluid viewport */
+  --max-width: 64rem;
+  --gutter: var(--space-s-l, clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem));
+}
+
+.wrapper {
+  max-width: var(--max-width);
+  padding-inline: var(--gutter);
+  margin-inline: auto;
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Yusei Magic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/yuseiMagic/yusei-magic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@font-face {
+  font-family: "Adjusted Tahoma Fallback";
+  src: local(Tahoma);
+  size-adjust: 104%;
+  ascent-override: 95%;
+  descent-override: normal;
+  line-gap-override: 30%;
+}
+
+@font-face {
+  font-family: "Adjusted Trebuchet MS Fallback";
+  src: local(Trebuchet MS);
+  size-adjust: 104%;
+  ascent-override: normal;
+  descent-override: 32%;
+  line-gap-override: 0%;
+}
+
+/* 1. Use a more-intuitive box-sizing model. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 auto;
+  font-family: "Proza Libre", "Adjusted Trebuchet MS Fallback";
+  font-weight: 400;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  letter-spacing: 0.05em;
+}
+
+strong {
+  font-weight: 900;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+strong {
+  font-family: "Yusei Magic", "Adjusted Tahoma Fallback";
+}
+
+h4 {
+  font-weight: 500;
+}
+
+.proza-libre {
+  font-family: "Proza Libre", "Adjusted Trebuchet MS Fallback";
+  font-weight: 400;
+}
+
+h1 {
+  font-size: var(--step-3);
+  margin-bottom: var(--space-m);
+}
+
+h2 {
+  font-size: var(--step-2);
+  margin-bottom: var(--space-xs);
+}
+
+h3 {
+  font-size: var(--step-2);
+  margin-bottom: var(--space-2xs);
+  margin-top: var(--space-s);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--step-1);
+  margin-block: var(--space-xs);
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: 0;
+}
+
+p,
+a,
+aside,
+li {
+  font-size: var(--step-0);
+}
+
+p {
+  margin-bottom: var(--space-2xs);
+}
+
+section {
+  margin-bottom: var(--space-m);
+}
+
+h1 a {
+  font-size: var(--step-3);
+}
+
+a {
+  text-decoration-color: #a78bfa;
+  text-underline-offset: var(--space-3xs);
+}
+
+* {
+  color: #313131;
+}
+
+blockquote {
+  display: block;
+  background: hsla(0, 0%, 19%, 0.1);
+  padding: var(--space-xs);
+  border-radius: 0.25rem;
+  margin-block: var(--space-2xs);
+}
+
+blockquote * {
+  margin: 0;
+}
+
+main {
+  margin-block: var(--space-xl);
+}
+
+button {
+  font-size: var(--step-1);
+}

@@ -1,0 +1,21 @@
+---
+import Layout from "@layouts/layout.astro";
+import "@styles/global.css";
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('posts')
+---
+
+<Layout title="Example Portfolio">
+  <h1><a href="https://keystatic.com/">Keystatic</a> and <a href="https://github.com/QwikDev/astro">@qwikdev/astro</a></h1>
+  <p>Here's a little demo using the Qwik Astro integration and Keystatic! Check out the posts below.</p>
+  
+  <h2>My posts:</h2>
+  <ul>
+    {posts.map(post => (
+      <li>
+        <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+      </li>
+    ))}
+  </ul>
+</Layout>

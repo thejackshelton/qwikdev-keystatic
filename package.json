@@ -1,0 +1,31 @@
+{
+  "name": "qwikdev-keystatic",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.2",
+    "@astrojs/cloudflare": "^9.0.0",
+    "@astrojs/markdoc": "^0.8.3",
+    "@astrojs/react": "^3.0.10",
+    "@builder.io/qwik": "^1.4.4",
+    "@fontsource/proza-libre": "^5.0.8",
+    "@fontsource/sriracha": "^5.0.18",
+    "@keystatic/astro": "^3.0.2",
+    "@keystatic/core": "^0.3.17",
+    "@qwikdev/astro": "^0.5.2",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "astro": "^4.3.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.33.2",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,52 @@
+---
+import "@styles/global.css";
+import Layout from '@layouts/layout.astro'
+import { getEntry } from 'astro:content'
+
+const post = await getEntry('posts', 'about-me')
+const { Content } = await post.render()
+
+import Carousel from "@components/qwik-carousel/qwik-carousel";
+
+import { getImage } from "astro:assets";
+
+import binoculars from "@assets/jack/jack-binoculars.jpg";
+import cello from "@assets/jack/jack-cello.jpg";
+import mojo from "@assets/jack/jack-mojo.jpg";
+import santa from "@assets/jack/jack-santa.jpg";
+import forest from '@assets/jack/jack-forest.jpg';
+
+const slideImages = [{
+  title: 'jack with binoculars',
+  thumbnail: binoculars,
+}, {
+  title: 'jack playing cello',
+  thumbnail: cello,
+}, {
+  title: 'jack with santa hat',
+  thumbnail: santa,
+}, {
+  title: 'jack in the forest',
+  thumbnail: forest,
+}, {
+  title: 'jack and mojo',
+  thumbnail: mojo,
+}]
+
+const optimizedImages = await Promise.all(slideImages.map(async (image) => {
+  const optimizedImage = await getImage({ src: image.thumbnail, format: 'webp', width: 500, height: 500 });
+  return {
+    ...image,
+    optimizedThumbnail: optimizedImage.src
+  };
+}));
+---
+
+<Layout>
+    <Carousel optimizedImages={optimizedImages} />
+    <Content />
+    <h3>Need to go somewhere?</h3>
+    <a href="/">Go back home</a>
+</Layout>
+
+
