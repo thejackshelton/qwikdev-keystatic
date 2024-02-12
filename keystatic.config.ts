@@ -3,7 +3,10 @@ import { config, collection, fields } from "@keystatic/core";
 
 export default config({
   storage: {
-    kind: "local",
+    kind: "cloud",
+  },
+  cloud: {
+    project: "qwik-starter/qwikdev-keystatic",
   },
   collections: {
     posts: collection({
