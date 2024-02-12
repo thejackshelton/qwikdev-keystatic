@@ -25,13 +25,9 @@ type SlideImages = {
 export default component$((props: SlideImages) => {
   const { optimizedImages } = props;
   useStyles$(styles);
-  const currentIndexSig = useSignal<number>(0);
 
   return (
-    <Carousel
-      bind:currSlideIndex={currentIndexSig}
-      class={["qwikui-carousel", props.class]}
-    >
+    <Carousel class={["qwikui-carousel", props.class]}>
       <CarouselPrev>Previous Image</CarouselPrev>
       <CarouselView class="qwikui-view">
         <CarouselContainer class="qwikui-container">
