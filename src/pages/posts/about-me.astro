@@ -34,7 +34,7 @@ const slideImages = [{
 }]
 
 const optimizedImages = await Promise.all(slideImages.map(async (image) => {
-  const optimizedImage = await getImage({ src: image.thumbnail, format: 'webp', width: 500, height: 500 });
+  const optimizedImage = await getImage({ src: image.thumbnail, format: 'webp', width: 500, height: 500, quality: '70' });
   return {
     ...image,
     optimizedThumbnail: optimizedImage.src
