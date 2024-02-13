@@ -30,22 +30,24 @@ export default component$((props: SlideImages) => {
     <Carousel class={["qwikui-carousel", props.class]}>
       <CarouselPrev>Previous Image</CarouselPrev>
       <CarouselView class="qwikui-view">
-        <CarouselContainer class="qwikui-container">
-          {optimizedImages.map((image) => (
-            <CarouselSlide key={image.title} class="qwikui-slide">
-              <div class="carousel-slide">
-                <img
-                  style={{ objectFit: "cover" }}
-                  src={image.optimizedThumbnail}
-                  alt={image.title}
-                  loading="lazy"
-                  width="500"
-                  height="500"
-                />
-              </div>
-            </CarouselSlide>
-          ))}
-        </CarouselContainer>
+        <div class="overflow-container">
+          <CarouselContainer class="qwikui-container">
+            {optimizedImages.map((image) => (
+              <CarouselSlide key={image.title} class="qwikui-slide">
+                <div class="carousel-slide">
+                  <img
+                    style={{ objectFit: "cover" }}
+                    src={image.optimizedThumbnail}
+                    alt={image.title}
+                    loading="lazy"
+                    width="500"
+                    height="500"
+                  />
+                </div>
+              </CarouselSlide>
+            ))}
+          </CarouselContainer>
+        </div>
       </CarouselView>
       <CarouselNext>Next Image</CarouselNext>
     </Carousel>

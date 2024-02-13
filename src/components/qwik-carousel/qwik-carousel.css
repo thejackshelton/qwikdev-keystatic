@@ -25,11 +25,14 @@ img {
 }
 
 .qwikui-view {
-  overflow: clip;
   flex: 3;
   flex-grow: 3;
   border: 5px solid #c4b5fd;
   border-radius: 0.0001rem;
+}
+
+.overflow-container {
+  overflow: hidden;
 }
 
 .qwikui-container {
